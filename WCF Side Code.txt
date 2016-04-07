@@ -1,0 +1,42 @@
+Iservice.cs :
+        [OperationContract]
+        [WebInvoke(Method = "POST", 
+            ResponseFormat = WebMessageFormat.Json, 
+            RequestFormat = WebMessageFormat.Json, 
+            BodyStyle = WebMessageBodyStyle.WrappedResponse, 
+            UriTemplate = "updateCliamteControlParameter")]
+        bool updateCliamteControlParameter(List<ClimateControl> lcc);
+
+Service.cs :
+    public bool updateCliamteControlParameter(List<ClimateControl> lcc)
+        {
+            try
+            {
+                if (lcc != null && lcc.Count !=0)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+Model Class :
+
+using System.Runtime.Serialization;
+
+namespace JSONWebService.Model
+{
+    [DataContract]
+    public class ClimateControl
+    {
+        [DataMember]
+        public string Name { get; set; }
+        [DataMember]
+        public string Value { get; set; }
+    }
+}
+	
