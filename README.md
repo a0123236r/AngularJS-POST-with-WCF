@@ -13,6 +13,7 @@ STEP : 3
     
 
 Remark:
+
         + if WCF IService BodyStyle = WebMessageBodyStyle.Bare. So JSON date should like this
            [{"Name":"jack", "Value": "22"}, {"Name": "lily", "Value": "25"}]
            
