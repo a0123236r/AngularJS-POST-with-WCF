@@ -11,3 +11,11 @@ STEP : 2
 STEP : 3
     Test function and REST webservice
     
+
+
+Remark:
+        + if WCF IService BodyStyle = WebMessageBodyStyle.Bare. So JSON date should like this
+           [{"Name":"jack", "Value": "22"}, {"Name": "lily", "Value": "25"}]
+        + if WCF IService BodyStyle = WebMessageBodyStyle.Wrapped. So JSON date should like this
+          {"lcc" : [{"Name":"jack", "Value": "22"}, {"Name": "lily", "Value": "25"}]}
+        + AngularJS controller headers Content-Type should be application/json. Do NOT application/JSON
